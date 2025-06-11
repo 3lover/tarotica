@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tarotica</title>
+    <meta name="description" content="A very tarotic card game by 3love">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/70d3a5a5-48fd-4fbe-9978-c1a42165897d/c2d1e1c8-6b75-4025-8904-9e9e8907fcc7.image.png?v=1741749780357">
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <!-- google font families -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=JetBrains Mono" rel="stylesheet">
+</head>
+
+<body oncontextmenu="return false;">
+    <div id="backgroundContainer">
+        <!-- The front menu, for now a simple name input, code input, and a button to join/host -->
+        <div id="frontMenuContainer" class="verticalCentered">
+            <input id="frontMenuNameInput" class="frontMenuInput" maxlength="20" placeholder="Player Name">
+            <input id="frontMenuCodeInput" class="frontMenuInput" maxlength="20" placeholder="Lobby Code">
+            <button id="frontPageSubmitButton" class="frontMenuInput">Create Lobby</button>
+        </div>
+
+        <!-- The main page, showing every player and the table as a whole  -->
+        <div id="tableViewContainer" class="">
+            <p id="player1name">1love</p>
+            <p id="player2name">2love</p>
+            <p id="player3name">3love</p>
+            <p id="player4name">4love</p>
+        </div>
+    </div>
+</body>
+<script src="index.js" type="module"></script>
+</html>
