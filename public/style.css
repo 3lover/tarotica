@@ -1,0 +1,296 @@
+:root {
+    --black: #000000;
+    --veryDarkGrey: #333333;
+    --darkGrey: #555555;
+    --grey: #888888;
+    --lightGrey: #aaaaaa;
+    --veryLightGrey: #dddddd;
+    --white: #ffffff;
+
+    --red: #ff0000;
+    --lightRed: #fa5f5f;
+    --veryLightRed: #ffb8b8;
+    --darkRed: #a80000;
+    --veryDarkRed: #690000;
+    --greyRed: #825b5b;
+
+    --orange: #ff8800;
+    --lightOrange: #ffb663;
+    --veryLightOrange: #ffdeb8;
+    --darkOrange: #c26700;
+    --veryDarkOrange: #7a4100;
+    --greyOrange: #755a3b;
+
+    --yellow: #ffff00;
+    --lightYellow: #ffff6e;
+    --veryLightYellow: #ffffc9;
+    --darkYellow: #a6a600;
+    --veryDarkYellow: #636300;
+    --greyYellow: #8c8c58;
+
+    --green: #00ff00;
+    --lightGreen: #59ff59;
+    --veryLightGreen: #b8ffb8;
+    --darkGreen: #00ab00;
+    --veryDarkGreen: #005200;
+    --greyGreen: #608f60;
+
+    --cyan: #00ffff;
+    --lightCyan: #6bffff;
+    --veryLightCyan: #baffff;
+    --darkCyan: #00b0b0;
+    --veryDarkCyan: #005c5c;
+    --greyCyan: #4f7878;
+
+    --blue: #0000ff;
+    --lightBlue: #5c5cff;
+    --veryLightBlue: #c2d9ff;
+    --darkBlue: #0047ba;
+    --veryDarkBlue: #002259;
+    --greyBlue: #4b5d7a;
+
+    --purple: #8800ff;
+    --lightPurple: #ad4fff;
+    --veryLightPurple: #deb8ff;
+    --darkPurple: #54009e;
+    --veryDarkPurple: #2e0057;
+    --greyPurple: #574369;
+
+    --pink: #ff00ff;
+    --lightPink: #ff6bff;
+    --veryLightPink: #ffb8ff;
+    --darkPink: #bd00bd;
+    --veryDarkPink: #630063;
+    --greyPink: #784a78;
+}
+
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url('https://fonts.googleapis.com/css?family=JetBrains Mono');
+}
+
+* {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: "JetBrains Mono", sans-serif;
+    user-select: none;
+    box-shadow: none;
+    appearance: none;
+    border: 0;
+    outline: 0;
+}
+
+body {
+    position: static;
+}
+
+div {
+    background-color: var(--black);
+}
+
+input {
+    position: static;
+    background-color: var(--darkCyan);
+    transition: 0.2s;
+    text-align: center;
+}
+
+input:hover {
+    background-color: var(--cyan);
+}
+
+input:focus {
+    background-color: var(--veryLightCyan);
+}
+
+button {
+    position: static;
+    background-color: var(--lightRed);
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: var(--red);
+}
+
+button:active {
+    background-color: var(--darkRed);
+}
+
+.verticalCentered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.hidden {
+    display: none;
+}
+
+#backgroundContainer {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#frontMenuContainer {
+    top: 35vh;
+    left: 35vw;
+    width: 30vw;
+    height: 30vh;
+    background-color: var(--greyBlue);
+}
+
+.frontMenuInput {
+    width: 20vw;
+    height: 8vh;
+    font-size: 3vh;
+}
+
+#tableViewContainer {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    display: none;
+}
+
+#player3name {
+    position: absolute;
+    top: 40vh;
+    left: 2.5vw;
+    height: 5vh;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2vh;
+}
+#player1name {
+    position: absolute;
+    top: 55vh;
+    left: 2.5vw;
+    height: 5vh;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2vh;
+}
+#player4name {
+    position: absolute;
+    top: 40vh;
+    right: 2.5vw;
+    height: 5vh;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2vh;
+}
+#player2name {
+    position: absolute;
+    top: 55vh;
+    right: 2.5vw;
+    height: 5vh;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2vh;
+}
+
+.singleCardContainer {
+    width: 15vh;
+    height: 18vh;
+    background-color: var(--black);
+    border: 0.5vh solid var(--white);
+    border-radius: 1vh;
+}
+.cardTitle {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 28%;
+    font-size: 1.8vh;
+    text-align: center;
+    color: var(--white);
+    overflow: wrap;
+    border-bottom: 0.1vh solid var(--white);
+    background-color: transparent;
+}
+.cardDescription {
+    left: 0;
+    top: 28%;
+    width: 100%;
+    height: 72%;
+    font-size: 1.2vh;
+    color: var(--white);
+    overflow: wrap;
+    padding: 1vh;
+    background-color: transparent;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.cardDescription::-webkit-scrollbar {
+    display: none;
+}
+
+.focusViewCard {
+    left: calc(50vw - 30vh);
+    width: 60vh;
+    top: 14vh;
+    height: 72vh;
+    z-index: 50000;
+}
+.focusViewTitle {
+    font-size: 4vh;
+    height: 18%;
+}
+.focusViewDescription {
+    font-size: 3vh;
+    top: 20%;
+    height: 82%;
+}
+
+.cardArea {
+    background-color: var(--veryDarkGrey);
+    border: 0.3vh dashed var(--yellow);
+    opacity: 0.2;
+}
+
+.cardAreaHighlight {
+    opacity: 1;
+}
+
+.cardAreaFullView {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+    border: 0.3vh dashed var(--yellow);
+    z-index: 10000;
+    display: none;
+    overflow-y: scroll;
+}
+
+.noScrollBar::-webkit-scrollbar {
+    display: none;
+}
+.noScrollBar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.mouseFollower {
+    position: absolute;
+    width: 1vh;
+    height: 1vh;
+    background-color: var(--darkRed);
+    z-index: 999999999;
+    pointer-events: none;
+}
+
+.keyword {
+    font-weight: bold;
+    text-decoration: underline;
+    position: relative;
+}

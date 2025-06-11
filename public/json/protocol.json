@@ -1,0 +1,18 @@
+{
+    "client": {
+        "connected": 0,
+        "disconnected": 1,
+        "doesCodeExist": 2,
+        "fullLobbyUpdate": 3,
+        "letGo": 4
+    },
+    "server": {
+        "checkIfCodeExists": 0,
+        "joinLobbyWithCode": 1,
+        "updateCard": 2,
+        "mouseMoved": 3,
+        "flipCardForAll": 4,
+        "shuffleArea": 5,
+        "removePlayer": 6
+    }
+}
