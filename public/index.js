@@ -606,6 +606,7 @@ class Socket {
     constructor() {
         this.socket = null;
         this.connected = false;
+        this.pingsocket = false;
     }
 
     connect() {
@@ -633,6 +634,7 @@ class Socket {
     }
 
     message(packet) {
+        if (this.pingsocket) return;
         let reader = new DataView(packet.data);
         
         switch (reader.getInt8(0)) {
@@ -746,7 +748,7 @@ class Socket {
     }
 
     open() {
-        console.log("Socket connected");
+        if (!this.pingsocket) console.log("Socket connected");
     }
 
     error(error) {
@@ -754,8 +756,10 @@ class Socket {
     }
 
     close(reason) {
-        console.log(`Socket closed for reason:`);
-        console.log(reason)
+        if (!this.pingsocket) {
+            console.log(`Socket closed for reason:`);
+            console.log(reason);
+        }
     }
 }
 
@@ -997,3 +1001,16 @@ document.addEventListener("keyup", function(e) {
         }
     }
 });
+
+
+// for our render hosting, we need to do this to keep the project active
+function pingRender() {
+    let pingsocket = new Socket();
+    pingsocket.connect();
+    pingsocket.pingsocket = true;
+    setTimeout(function(e) {
+        pingsocket.disconnect();
+        pingsocket = null;
+    }, 1000);
+}
+setInterval(pingRender, 5 * 1000);
