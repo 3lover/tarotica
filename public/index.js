@@ -1014,4 +1014,4 @@ function pingRender() {
         pingsocket = null;
     }, 1000);
 }
-setInterval(pingRender, 5 * 1000);
+setInterval(pingRender, 5 * 60 * 1000);
