@@ -5,7 +5,7 @@
         "shortDescription": "Either reveal your future and replace a card, or bring visible cards in your future to your hand.",
         "color": "var(--black)",
         "copies": 2,
-        "keywords": "Invertible"
+        "keywords": "Invertible 2"
     }, {
         "title": "Fool",
         "fullDescription": "$Discard% all cards in your $Future%.^$Target%: Other Players<br><br>$Steal 1% from target player's hand.",
