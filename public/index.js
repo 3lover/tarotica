@@ -611,7 +611,7 @@ class Socket {
 
     connect() {
         if (this.socket !== null) return;
-        this.socket = new WebSocket("wss://" + location.host + "/ws");
+        this.socket = new WebSocket("wss://" + location.host + "/wss");
         this.socket.binaryType = "arraybuffer";
         this.socket.onopen = () => this.open();
         this.socket.onmessage = (data) => this.message(data);
