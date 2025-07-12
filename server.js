@@ -6,6 +6,7 @@ const express = require('express');
 const compression = require("compression");
 const cors = require("cors");
 const app = express();
+
 const protocol = require("./public/json/protocol.json");
 const p = require("./serverProtocol");
 const cardSetup = require("./public/json/cardData.json");
@@ -326,24 +327,16 @@ const sockets = {
     }
 }
 
-/*// websocket server stuff, creates a locally hosted server for us
-const credentials = { key: privateKey, cert: certificate };
-
+// websocket server stuff, creates a locally hosted server for us
 app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "public/index.html");
 });
 
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
-WebSocket(app, httpsServer);
 
 app.ws("/wss", sockets.connect);
 
-httpServer.listen(8080);
-httpsServer.listen(8443, () => {
-    console.log("Server running on port 8443")
-});*/
 const site = ((port, connect) => {
   WebSocket(app);
   

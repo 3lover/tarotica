@@ -1,7 +1,7 @@
 {
-    "name": "rubixcube",
+    "name": "tarotica",
     "version": "0.1.0",
-    "description": "WebGPU Testing",
+    "description": "a very tarotic card game",
     "main": "server.js",
     "scripts": {
       "start": "node server.js"
