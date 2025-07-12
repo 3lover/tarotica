@@ -1,8 +1,8 @@
 [
     {
         "title": "High Priestess",
-        "fullDescription": "Reveal all cards in your $Future%. $Discard% a fate, then $Draw 1 Fate% revealed and replace it.^$Add% all faceup cards in your $Future% to your hand.",
-        "shortDescription": "Either reveal your future and replace a card, or bring visible cards in your future to your hand.",
+        "fullDescription": "Reveal all cards in your $Future%. $Discard% a fate, then $Draw 1 Fate% revealed and replace it.^$Add% all faceup cards in your $Future% to your hand then $Draw 1 Tarot%, even exceeding $Max Hand%.",
+        "shortDescription": "Either reveal your future and replace a card, or bring visible cards in your future to your hand and draw.",
         "color": "var(--black)",
         "copies": 2,
         "keywords": "Invertible"
@@ -22,7 +22,7 @@
         "keywords": "Invertible"
     }, {
         "title": "Empress",
-        "fullDescription": "$Target%: Other Players<br><br>$Steal 2% from the target's hand, they then may choose to $Discard% a Death if applicable.^$Target%: Other Players<br><br>Target player $Discards% 1 tarot, or 2 tarots if they have 4 or more.",
+        "fullDescription": "$Target%: Other Players With Deaths<br><br>$Steal 2% from the target's hand, they then may choose to $Discard% a Death from their modifiers.^$Target%: Other Players<br><br>Target player $Discards% 1 tarot, or 2 tarots if they have 4 or more.",
         "shortDescription": "Either steal and let a player discard a death, or force a player to discard tarots.",
         "color": "var(--black)",
         "copies": 2,
@@ -65,7 +65,7 @@
     }, {
         "title": "Hermit",
         "fullDescription": "$Target%: Any Player<br><br>$Effect%: $Scry Range +3%, $Scout 3%, and $Hand Size -2%.^$Target%: Any Player<br><br>$Effect%: Your future can not be affected by other player's cards.",
-        "shortDescription": "Mod to either improve scry but lose hand size, or remove yourself as a target by discarding.",
+        "shortDescription": "Mod to either improve scry but lose hand size, or safeguard your future.",
         "color": "var(--black)",
         "copies": 1,
         "keywords": "Invertible, Modifier (U, I)"
@@ -85,8 +85,8 @@
         "keywords": "Invertible, Instant(U, I), Targeted (I)"
     }, {
         "title": "Hanged Man",
-        "fullDescription": "Rearrange your $Future% in any order.^$Target%: Other Players<br><br>Target player $Discards% 1 card, keeps 1 card, and gives you 1 card. If they have less than 3 cards, they choose which actions to take.",
-        "shortDescription": "Either rearrange your future, or make someone discard, keep, and gift you 1 card.",
+        "fullDescription": "Rearrange your $Future% in any order.^$Target%: Other Players<br><br>$Steal 2% from target player. They $Discard% 1, then give you the other.",
+        "shortDescription": "Either rearrange your future, or make someone discard, and gift you 1 card.",
         "color": "var(--black)",
         "copies": 2,
         "keywords": "Invertible, Targeted (I)"
@@ -148,8 +148,8 @@
         "keywords": "Invertible"
     }, {
         "title": "World",
-        "fullDescription": "$Target%: Any Player<br><br>$Effect%: Target $Draws 2 Tarot% when playing a Death.^$Target%: Any Player<br><br>$Effect%: Target $Draws 2 Fate% when playing a Death.",
-        "shortDescription": "Mod either to draw 2 fates, or 2 tarots, when playing a death.",
+        "fullDescription": "$Target%: Any Player<br><br>$Effect%: Target $Draws 2 Tarot% when gaining a Death effect.^$Target%: Any Player<br><br>$Effect%: Target $Draws 2 Fate% when gaining a Death effect.",
+        "shortDescription": "Mod either to draw 2 tarots or 2 fates when gaining a death.",
         "color": "var(--black)",
         "copies": 2,
         "keywords": "Invertible, Modifier (U, I)"
@@ -162,7 +162,7 @@
         "keywords": "Modifier"
     }, {
         "title": "3 of Wands",
-        "fullDescription": "This card repicates the top card on the tarot discard, including keywords like $Instant%. You may choose new inversions and targets.",
+        "fullDescription": "This card replicates the top card on the tarot discard, including keywords like $Instant%. You may choose new inversions and targets.",
         "shortDescription": "Replicate the effect of the most recently played tarot",
         "color": "var(--black)",
         "copies": 3,
@@ -183,8 +183,8 @@
         "keywords": "Targeted, Instant"
     }, {
         "title": "6 of Wands",
-        "fullDescription": "$Target%: Any Player<br><br>$Add% a card from your hand to the target's $Future%, then rearrange it in any way.",
-        "shortDescription": "Add a card to a future, then rearrange it.",
+        "fullDescription": "$Target%: Any Player<br><br>$Add% a card from your hand to the target's $Future% $Revealed%, then rearrange it in any way.",
+        "shortDescription": "Add a card to a future revealed, then rearrange it.",
         "color": "var(--black)",
         "copies": 2,
         "keywords": "Targeted, Instant"
@@ -239,8 +239,8 @@
         "keywords": "Modifier"
     }, {
         "title": "King of Wands",
-        "fullDescription": "All players $In Order% pass all fates in their hand to the next player $In Order%, even exceeding $Max Hand%.",
-        "shortDescription": "Every player passes their fates to the next player in order.",
+        "fullDescription": "All players immediately pass up to 5 fates in their hand to the next player $In Order%, even exceeding $Max Hand%.",
+        "shortDescription": "Every player passes up to 5 fates to the next player in order.",
         "color": "var(--black)",
         "copies": 1,
         "keywords": ""
@@ -337,7 +337,7 @@
         "keywords": ""
     }, {
         "title": "King of Swords",
-        "fullDescription": "$Draw 5 Tarot%, then $Reveal% 1 and $Add% it to your $Future%, and $Shuffle% the rest into the fate deck.",
+        "fullDescription": "$Draw 5 Tarot%, $Add% 1 to your $Future% $Revealed%, then $Shuffle% the rest into the fate deck.",
         "shortDescription": "Draw 5 tarots, add 1 to your future, and shuffle the rest into the fate deck.",
         "color": "var(--black)",
         "copies": 2,
@@ -760,7 +760,7 @@
         "keywords": "Neutral"
     }, {
         "title": "Monarchy",
-        "fullDescription": "The player(s) with the most fates $Draw 2 Tarot%, even exceeding $Max Hand%.",
+        "fullDescription": "The player(s) with the most fates in hand $Draw 2 Tarot%, even exceeding $Max Hand%.",
         "shortDescription": "The player(s) with most fates draw 2 tarots, even past max hand.",
         "color": "var(--darkRed)",
         "copies": 4,
@@ -778,6 +778,13 @@
         "shortDescription": "All players draw a card.",
         "color": "var(--darkRed)",
         "copies": 4,
+        "keywords": "Neutral"
+    }, {
+        "title": "Journey",
+        "fullDescription": "$Shuffle% all fates in hands together, then players draw them $In Order%, even exceeding $Max Hand%.",
+        "shortDescription": "Redistribute fates equally.",
+        "color": "var(--darkRed)",
+        "copies": 1,
         "keywords": "Neutral"
     }
 ]
