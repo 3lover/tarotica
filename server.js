@@ -1,6 +1,9 @@
+// the requirements to connect and create an https websocket server (wss)
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
+const privateKey = fs.readFileSync("./security/localhost-key.pem");
+const certificate = fs.readFileSync("./security/localhost.pem");
 const WebSocket = require("express-ws");
 const express = require('express');
 const compression = require("compression");
@@ -328,34 +331,42 @@ const sockets = {
 }
 
 // websocket server stuff, creates a locally hosted server for us
+const credentials = { key: privateKey, cert: certificate };
+
 app.use(express.static("public"));
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "public/index.html");
 });
 
 const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
+WebSocket(app, httpsServer);
 
 app.ws("/wss", sockets.connect);
 
-const site = ((port, connect) => {
-  WebSocket(app);
-  
-  app.ws("/ws", connect);
-  
-  app.use(compression());
-  //app.use(minify());
-  app.use(cors());
-  app.use(express.static("public"));
-  app.use(express.json());
-  
-  app.listen(port, () => console.log("Express is now active on port %s", port));
-  return (directory, callback) => app.get(directory, callback);
-})(3000, sockets.connect);
-
-app.use(express.static("public"));
-app.get("/", (req, res) => {
-	res.sendFile(__dirname + "/public/index.html");
+httpServer.listen(8080);
+httpsServer.listen(8443, () => {
+    console.log("Server running on port 8443")
 });
+const site = ((port, connect) => {
+    WebSocket(app);
+    
+    app.ws("/ws", connect);
+    
+    app.use(compression());
+    //app.use(minify());
+    app.use(cors());
+    app.use(express.static("public"));
+    app.use(express.json());
+    
+    app.listen(port, () => console.log("Express is now active on port %s", port));
+    return (directory, callback) => app.get(directory, callback);
+  })(3000, sockets.connect);
+  
+  app.use(express.static("public"));
+  app.get("/", (req, res) => {
+      res.sendFile(__dirname + "/public/index.html");
+  });
 
 
 function update() {
